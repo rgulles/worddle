@@ -20,3 +20,4 @@ class Settings:
 
         # Buttons
         self.button_width = 10
+        self.difficulty_button_width = 15
