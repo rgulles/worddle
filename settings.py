@@ -21,3 +21,7 @@ class Settings:
         # Buttons
         self.button_width = 10
         self.difficulty_button_width = 15
+        self.submit_button_width = 10
+
+        # Entry
+        self.entry_width = 2

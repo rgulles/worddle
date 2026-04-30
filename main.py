@@ -3,6 +3,7 @@ from tkinter import *
 from settings import Settings
 from welcome_screen import WelcomeScreen
 from difficulty_screen import DifficultyScreen
+from easy_screen import EasyScreen
 
 class Worddle:
     def __init__(self, master):
@@ -31,7 +32,10 @@ class Worddle:
         self.difficulty_screen = DifficultyScreen(self.container, self.show_welcome_screen, self.show_easy_screen)
     
     def show_easy_screen(self):
-        pass
+        for widget in self.container.winfo_children():
+            widget.pack_forget()
+
+        self.easy_screen = EasyScreen(self.container)
 
 if __name__ == "__main__":
     root = Tk()
