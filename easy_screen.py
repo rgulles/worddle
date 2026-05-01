@@ -1,6 +1,7 @@
 from tkinter import Frame, Button, Label, Entry
 
 from settings import Settings
+from words import get_random_word_data
 
 class EasyScreen(Frame):
     def __init__(self, master):
@@ -14,6 +15,11 @@ class EasyScreen(Frame):
 
         self.difficulty_label = Label(self, text="EASY", font=self.settings.label_font)
         self.difficulty_label.pack(pady=(0, 20))
+
+        self.word, self.riddle, self.letters = get_random_word_data("easy")
+
+        self.riddle_label = Label(self, text=self.riddle, font=self.settings.riddle_font, wraplength=400, justify="center")
+        self.riddle_label.pack(pady=(0, 20))
 
         self.frame = Frame(self)
         self.frame.pack()
