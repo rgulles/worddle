@@ -10,6 +10,8 @@ class Settings:
 
         # Colors
         self.GREY = '#C1C7C2'
+        self.YELLOW = '#EFFF14'
+        self.GREEN = '#00F721'
 
         # Fonts
         self.font_family = "Courier New"
