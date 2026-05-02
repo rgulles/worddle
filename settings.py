@@ -28,3 +28,7 @@ class Settings:
 
         # Entry
         self.entry_width = 2
+
+        # Rows and Columns
+        self.rows = 6
+        self.easy_cols = 4
