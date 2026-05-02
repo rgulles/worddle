@@ -6,11 +6,11 @@ from words import get_random_word_data
 from grid import create_grid
 
 class EasyScreen(Frame):
-    def __init__(self, master):
+    def __init__(self, master, restart_callback):
         super().__init__(master)
 
         self.settings = Settings()
-        self.controller = GameController(self, self.settings)
+        self.controller = GameController(self, self.settings, self.master, restart_callback)
         self.pack()
 
         self.word, self.riddle, self.letters = get_random_word_data("easy")

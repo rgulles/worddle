@@ -1,9 +1,11 @@
 from game_logic import check_guess
+from result_handler import ResultHandler
 
 class GameController:
-    def __init__(self, ui, settings):
+    def __init__(self, ui, settings, root, restart_callback):
         self.ui = ui
         self.settings = settings
+        self.result_handler = ResultHandler(root, restart_callback)
 
     def check_row(self):
         row_inputs = self.ui.inputs[self.ui.current_row]
@@ -26,7 +28,7 @@ class GameController:
 
         if guess == self.ui.letters:
             self.ui.submit_button.config(state="disabled")
-            print("You Guess the Word!")
+            self.result_handler.game_won()
             return
 
         for entry in row_inputs:
@@ -36,7 +38,7 @@ class GameController:
 
         if self.ui.current_row >= len(self.ui.inputs):
             self.ui.submit_button.config(state="disabled")
-            print("You Lose, Game Over!")
+            self.result_handler.game_lost()
             return
 
         for entry in self.ui.inputs[self.ui.current_row]:

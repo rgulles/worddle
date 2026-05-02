@@ -35,7 +35,7 @@ class Worddle:
         for widget in self.container.winfo_children():
             widget.pack_forget()
 
-        self.easy_screen = EasyScreen(self.container)
+        self.easy_screen = EasyScreen(self.container, self.show_difficulty_screen)
 
 if __name__ == "__main__":
     root = Tk()
