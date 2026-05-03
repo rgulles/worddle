@@ -32,3 +32,5 @@ class Settings:
         # Rows and Columns
         self.rows = 6
         self.easy_cols = 4
+        self.normal_cols = 5
+        self.hard_cols = 6

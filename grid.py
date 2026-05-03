@@ -38,9 +38,15 @@ def validate_input(P):
         return True
     return P.isalpha() and len(P) == 1
 
-def create_grid(frame, settings, inputs):
+def create_grid(frame, settings, inputs, difficulty):
     rows = settings.rows
-    cols = settings.easy_cols
+
+    if difficulty == "easy":
+        cols = settings.easy_cols
+    elif difficulty == "normal":
+        cols = settings.normal_cols
+    else:
+        cols = settings.hard_cols
 
     vcmd = frame.register(validate_input)
 
